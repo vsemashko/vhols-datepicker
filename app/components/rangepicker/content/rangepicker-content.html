@@ -1,0 +1,42 @@
+<div class="rangepicker-content">
+    <div class="row">
+        <div class="col-sm-6 col-xs-12">
+            <div class="header-bar field">
+                <div>
+                    <div class="dropdown-wrapper">
+                        <!--<p>{{vm.selectedMonth | date:'MMMM yyyy'}}</p>-->
+                        <i class="icon-arrow-down"></i>
+                        <select class="dropdown"
+                                ng-model="vm.selectedMonth"
+                                ng-options="month | date:'MMMM yyyy' for month in vm.availableMonths"
+                                ng-change="vm.selectMonth(vm.selectedMonth)">
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 hidden-xs selected-month">
+            <p>{{vm.nextMonth | date:'MMMM  yyyy'}}</p>
+            <a class="icon-right" href
+               ng-if="!vm.isLastMonthSelected()"
+               ng-click="vm.selectNextMonth()"
+               title="Next"></a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-xs-12">
+            <vhols-datepicker month="vm.selectedMonth"
+                        initial-from-date="vm.initialFromDate"
+                        initial-to-date="vm.initialToDate"
+                        from-date="vm.fromDate"
+                        to-date="vm.toDate"></vhols-datepicker>
+        </div>
+        <div class="col-sm-6 hidden-xs">
+            <vhols-datepicker month="vm.nextMonth"
+                        initial-from-date="vm.initialFromDate"
+                        initial-to-date="vm.initialToDate"
+                        from-date="vm.fromDate"
+                        to-date="vm.toDate"></vhols-datepicker>
+        </div>
+    </div>
+</div>

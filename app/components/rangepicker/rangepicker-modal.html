@@ -1,0 +1,19 @@
+<div class="rangepicker-modal">
+    <div class="modal-header">
+        <h3 class="modal-title" id="modal-title">
+            <span ng-if="!modal.fromDate && modal.isReselect">Please re-select a <strong>departure</strong> date</span>
+            <span ng-if="modal.fromDate && modal.isReselect">Please re-select the <strong>return</strong> date</span>
+            <span ng-if="!modal.fromDate && !modal.isReselect">Select your <strong>departure</strong> date</span>
+            <span ng-if="modal.fromDate && !modal.isReselect">Now, select your <strong>return</strong> date</span>
+        </h3>
+        <i class="glyphicon glyphicon-remove" ng-click="modal.cancel()"></i>
+    </div>
+    <div class="modal-body" id="modal-body">
+        <vhols-rangepicker-content
+                initial-from-date="modal.initialFromDate"
+                initial-to-date="modal.initialToDate"
+                from-date="modal.fromDate"
+                to-date="modal.toDate"
+                on-complete="modal.ok()"></vhols-rangepicker-content>
+    </div>
+</div>

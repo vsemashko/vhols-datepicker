@@ -1,0 +1,13 @@
+<div>
+    <!--<button type="button" class="btn btn-default" vhols-rangepicker from-date="vm.fromDate" to-date="vm.toDate">Select range</button>-->
+    <div vhols-rangepicker from-date="vm.fromDate" to-date="vm.toDate" class="range-input">
+        <div>
+            <label for="depart">Leaving on</label>
+            <input id="depart" type="text" value="{{vm.fromDate | date}}">
+        </div>
+        <div>
+            <label for="return">Returning on</label>
+            <input id="return" type="text" value="{{vm.toDate | date}}">
+        </div>
+    </div>
+</div>
