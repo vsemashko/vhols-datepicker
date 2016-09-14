@@ -2,13 +2,13 @@
     angular.module('vhols.rangepicker')
         .controller('RangePickerModalController', RangePickerModalController);
 
-    RangePickerModalController.$inject = ['$uibModalInstance', 'fromDate', 'toDate'];
+    RangePickerModalController.$inject = ['$uibModalInstance', 'fromDate', 'toDate', 'returnOnly'];
 
-    function RangePickerModalController($uibModalInstance, fromDate, toDate) {
+    function RangePickerModalController($uibModalInstance, fromDate, toDate, returnOnly) {
         var modal = this;
         modal.initialFromDate = fromDate;
         modal.initialToDate = toDate;
-        modal.fromDate = null;
+        modal.fromDate = returnOnly ? fromDate : null;
         modal.toDate = null;
         modal.isReselect = modal.initialFromDate ? true : false;
 

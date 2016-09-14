@@ -9,7 +9,8 @@
             restrict: 'A',
             scope: {
                 fromDate: '=',
-                toDate: '='
+                toDate: '=',
+                returnOnly: '='
             },
             link: link
         };
@@ -29,6 +30,9 @@
                         },
                         toDate: function () {
                             return scope.toDate;
+                        },
+                        returnOnly: function () {
+                            return scope.returnOnly;
                         }
                     }
                 });

@@ -43,6 +43,7 @@
             if (!vm.fromDate) {
                 vm.fromDate = date;
                 vm.initialFromDate = null;
+                vm.initialToDate = null;
             } else {
                 vm.toDate = date;
                 setTimeout(function () {

@@ -61,7 +61,7 @@
         }
 
         function isBetweenInitialDates(date) {
-            if (!scope.initialFromDate || !scope.initialToDate || scope.fromDate) return false;
+            if (!scope.initialFromDate || !scope.initialToDate) return false;
             return moment(date).isAfter(scope.initialFromDate) && moment(date).isBefore(scope.initialToDate);
         }
 
